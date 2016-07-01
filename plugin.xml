@@ -33,5 +33,21 @@
         <header-file src="src/ios/SaveToPhotoAlbum.h" />
         <source-file src="src/ios/SaveToPhotoAlbum.m" />
     </platform>
+    
+     <!-- android -->
+  <platform name="android">
+    <source-file src="src/android/SaveToPhotoAlbum.java" target-dir="src/com/nimingban/cordova/savetophotoalbum"/>
+
+    <config-file parent="/*" target="AndroidManifest.xml">
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+      <uses-permission android:name="android.permission.DELETE_CACHE_FILES"/>
+    </config-file>
+
+    <config-file parent="/*" target="res/xml/config.xml">
+      <feature name="SaveToPhotoAlbum">
+        <param name="android-package" value="com.nimingban.cordova.savetophotoalbum"/>
+      </feature>
+    </config-file>
+  </platform>
 
 </plugin>
