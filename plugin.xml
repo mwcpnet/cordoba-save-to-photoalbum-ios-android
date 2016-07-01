@@ -45,7 +45,7 @@
 
     <config-file parent="/*" target="res/xml/config.xml">
       <feature name="SaveToPhotoAlbum">
-        <param name="android-package" value="com.nimingban.cordova.savetophotoalbum"/>
+        <param name="android-package" value="com.nimingban.cordova.savetophotoalbum.SaveToPhotoAlbum"/>
       </feature>
     </config-file>
   </platform>
