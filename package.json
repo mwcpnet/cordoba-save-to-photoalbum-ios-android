@@ -5,7 +5,8 @@
   "cordova": {
     "id": "com.nimingban.cordova.savetophotoalbum",
     "platforms": [
-      "ios"
+      "ios",
+      "android"
     ]
   },
   "engines": [
