@@ -85,7 +85,7 @@ private Runnable saveFileRunnable = new Runnable() {
             try {
             	savePhoto(mBitmap, "zhaopao_", "JPG", 100);
                 //saveFile(mBitmap, mFileName);
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
