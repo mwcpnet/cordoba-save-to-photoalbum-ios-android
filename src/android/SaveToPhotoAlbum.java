@@ -83,7 +83,8 @@ private Runnable saveFileRunnable = new Runnable() {
         @Override
         public void run() {
             try {
-                saveFile(mBitmap, mFileName);
+            	savePhoto(mBitmap, "zhaopao_", "JPG", 100);
+                //saveFile(mBitmap, mFileName);
             } catch (IOException e) {
                 e.printStackTrace();
             }
