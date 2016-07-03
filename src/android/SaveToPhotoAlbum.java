@@ -295,10 +295,10 @@ private Runnable saveFileRunnable = new Runnable() {
              * 2.2
              */
 //            if (check >= 1) {
-                folder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+//                folder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
 
 //            } else {
-//                folder = Environment.getExternalStorageDirectory();
+                folder = Environment.getExternalStorageDirectory();
 //            }
             
             if (!folder.exists()) {
