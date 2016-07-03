@@ -294,12 +294,12 @@ private Runnable saveFileRunnable = new Runnable() {
              * Environment.DIRECTORY_PICTURES ); //this throws error in Android
              * 2.2
              */
-            if (check >= 1) {
+//            if (check >= 1) {
                 folder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
 
-            } else {
-                folder = Environment.getExternalStorageDirectory();
-            }
+//            } else {
+//                folder = Environment.getExternalStorageDirectory();
+//            }
             
             if (!folder.exists()) {
                 folder.mkdirs();
