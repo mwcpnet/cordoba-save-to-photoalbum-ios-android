@@ -297,12 +297,12 @@ private Runnable saveFileRunnable = new Runnable() {
             if (check >= 1) {
                 folder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
 
-                if (!folder.exists()) {
-                    folder.mkdirs();
-                }
-
             } else {
                 folder = Environment.getExternalStorageDirectory();
+            }
+            
+            if (!folder.exists()) {
+                folder.mkdirs();
             }
 
             // building the filename
@@ -332,7 +332,7 @@ private Runnable saveFileRunnable = new Runnable() {
             retVal = imageFile;
 
         } catch (Exception e) {
-            Log.e("SaveImageToGallery", "An exception occured while saving image: " + e.toString());
+            Log.e("SaveToPhotoAlbum", "An exception occured while saving image: " + e.toString());
         }
 
         return retVal;
