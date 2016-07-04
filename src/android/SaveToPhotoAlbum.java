@@ -52,23 +52,24 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 	public static final String REMOVE_IMAGE_ACTION = "removeImageFromLibrary";
 
 	@Override
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-		 cordova.getThreadPool().execute(new Runnable() {
-	            public void run() {
-	            	String imgname=args.getString(0);
-	            	String filename =  imgname.substring(imgname.lastIndexOf("/") + 1);
-	            	getImage(imgname,filename);
-	            	 try {
-		            	saveFile(mBitmap,filename);
-		            	 } catch (IOException e) {
-	            	 } catch (Exception e) {
-		                e.printStackTrace();
-		            }
-	            }
-	        });
-		 
-    	        return true;
-    }
+	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+		cordova.getThreadPool().execute(new Runnable() {
+			public void run() {
+				try {
+					final String imgname = args.getString(0);
+					String filename = imgname.substring(imgname.lastIndexOf("/") + 1);
+					getImage(imgname, filename);
+
+					saveFile(mBitmap, filename);
+				} catch (IOException e) {
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+
+		return true;
+	}
 
 	private Runnable saveFileRunnable = new Runnable() {
 		@Override
@@ -102,7 +103,7 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 		bos.close();
 	}
 
-	private void getImage(String url,String filename) {
+	private void getImage(String url, String filename) {
 		try {
 			String filePath = url;
 			mFileName = filename;
