@@ -291,8 +291,9 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 	 * Private method to save a {@link Bitmap} into the photo library/temp
 	 * folder with a format, a prefix and with the given quality.
 	 */
-	private String savePhoto(Bitmap bmp, String prefix, String format, int quality) {
-		File retVal = null;
+	private void savePhoto(Bitmap bmp, String prefix, String format, int quality) {
+//		File retVal = null;
+//		File retVal = null;
 
 		try {
 			String deviceVersion = Build.VERSION.RELEASE;
@@ -344,14 +345,14 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 			out.flush();
 			out.close();
 
-			retVal = folder+"/"+fileName;
+//			retVal = folder+"/"+fileName;
 //			retVal = imageFile;
 
 		} catch (Exception e) {
 			Log.e("SaveToPhotoAlbum", "An exception occured while saving image: " + e.toString());
 		}
 
-		return retVal;
+//		return retVal;
 	}
 
 	/**
