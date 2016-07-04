@@ -51,8 +51,8 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 	public static final String SAVE_BASE64_ACTION = "SaveToPhotoAlbum";
 	public static final String REMOVE_IMAGE_ACTION = "removeImageFromLibrary";
 
-	@Override
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+//	@Override
+    public boolean execute(String action, String[] url, CallbackContext callbackContext) throws JSONException {
     	
     	
 //    	 if ("beep".equals(action)) {
