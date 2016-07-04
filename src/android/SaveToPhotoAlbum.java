@@ -50,8 +50,6 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 	// actions constants
 	public static final String SAVE_BASE64_ACTION = "SaveToPhotoAlbum";
 	public static final String REMOVE_IMAGE_ACTION = "removeImageFromLibrary";
-	
-	
 
 	@Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -59,12 +57,17 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 	            public void run() {
 	            	
 	            	getImage();
-	            	saveFile(mBitmap,"zhaopao1.jpg");
+	            	 try {
+		            	saveFile(mBitmap,"zhaopao1.jpg");
+		            	 } catch (IOException e) {
+	            	 } catch (Exception e) {
+		                e.printStackTrace();
+		            }
 //	            	savePhoto(mBitmap, "zhaopao_", "JPG", 100);
 //	                callbackContext.success(); // Thread-safe.
 	            }
 	        });
-    	
+		 
 //    	 if ("beep".equals(action)) {
 //    	        final long duration = args.getLong(0);
 //    	        cordova.getActivity().runOnUiThread(new Runnable() {
@@ -125,8 +128,8 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 		bos.flush();
 		bos.close();
 	}
-	
-	private void getImage(){
+
+	private void getImage() {
 		try {
 			String filePath = "http://img.my.csdn.net/uploads/201211/21/1353511891_4579.jpg";
 			mFileName = "test.jpg";
@@ -293,7 +296,7 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 	 * folder with a format, a prefix and with the given quality.
 	 */
 	private File savePhoto(Bitmap bmp, String prefix, String format, int quality) {
-//		File retVal = null;
+		// File retVal = null;
 		File retVal = null;
 
 		try {
@@ -340,13 +343,13 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 
 			// now we create the image in the folder
 			File imageFile = new File(folder, fileName);
-			FileOutputStream out = new FileOutputStream(folder+"/"+fileName);
+			FileOutputStream out = new FileOutputStream(folder + "/" + fileName);
 			// compress it
 			bmp.compress(compressFormat, quality, out);
 			out.flush();
 			out.close();
 
-//			retVal = folder+"/"+fileName;
+			// retVal = folder+"/"+fileName;
 			retVal = imageFile;
 
 		} catch (Exception e) {
