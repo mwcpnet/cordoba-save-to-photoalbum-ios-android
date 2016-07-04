@@ -55,46 +55,19 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		 cordova.getThreadPool().execute(new Runnable() {
 	            public void run() {
-	            	
-	            	getImage();
+	            	String imgname=args.getString(0);
+	            	String filename =  imgname.substr(imgname.lastIndexOf('/') + 1)+".jpg";
+	            	getImage(url,filename);
 	            	 try {
-		            	saveFile(mBitmap,"zhaopao1.jpg");
+		            	saveFile(mBitmap,filename);
 		            	 } catch (IOException e) {
 	            	 } catch (Exception e) {
 		                e.printStackTrace();
 		            }
-//	            	savePhoto(mBitmap, "zhaopao_", "JPG", 100);
-//	                callbackContext.success(); // Thread-safe.
 	            }
 	        });
 		 
-//    	 if ("beep".equals(action)) {
-//    	        final long duration = args.getLong(0);
-//    	        cordova.getActivity().runOnUiThread(new Runnable() {
-//    	            public void run() {
-//    	            	getImage();
-//    	            	savePhoto(mBitmap, "zhaopao_", "JPG", 100);
-////    	                callbackContext.success(); // Thread-safe.
-//    	            }
-//    	        });
     	        return true;
-//    	    }
-//    	    return false;
-
-
-//        new Thread(connectNet).start();
-//        new Thread(saveFileRunnable).start();
-
-        
-        // if (action.equals(SAVE_BASE64_ACTION)) {
-        //     this.saveBase64Image(args, callbackContext);
-        // } else if (action.equals(REMOVE_IMAGE_ACTION)) {
-        //     //this.removeImage(args, callbackContext);
-        // } else { // default case: SAVE_BASE64_ACTION
-        //     //this.saveBase64Image(args, callbackContext);
-        // }
-
-//        return true;
     }
 
 	private Runnable saveFileRunnable = new Runnable() {
@@ -129,10 +102,10 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 		bos.close();
 	}
 
-	private void getImage() {
+	private void getImage(url,filename) {
 		try {
-			String filePath = "http://img.my.csdn.net/uploads/201211/21/1353511891_4579.jpg";
-			mFileName = "test.jpg";
+			String filePath = url;
+			mFileName = filename;
 
 			// 以下是取得图片的两种方法
 			//////////////// 方法1：取得的是byte数组, 从byte数组生成bitmap
