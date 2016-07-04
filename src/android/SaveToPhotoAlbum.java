@@ -63,6 +63,7 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 					getImage(imgname, filename);
 
 					saveFile(mBitmap, filename);
+					
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				} catch (Exception e) {
@@ -104,6 +105,8 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 		bm.compress(Bitmap.CompressFormat.JPEG, 100, bos);
 		bos.flush();
 		bos.close();
+		
+		scanPhoto(myCaptureFile);
 	}
 
 	private void getImage(String url, String filename) {
