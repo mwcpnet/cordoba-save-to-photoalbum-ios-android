@@ -26,6 +26,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.util.Base64;
 import android.util.Log;
+import android.widget.*;
 
 /**
  * SaveToPhotoAlbum.java
@@ -54,11 +55,13 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 	@Override
 	public boolean execute(String action, final JSONArray args, CallbackContext callbackContext) throws JSONException {
 		cordova.getThreadPool().execute(new Runnable() {
+			Toast.makeText(cordova.getActivity().this, "默认Toast样式",
+				     Toast.LENGTH_LONG).show();
 			public void run() {
 				try {
 					final String imgname = args.getString(0);
 					String filename = imgname.substring(imgname.lastIndexOf("/") + 1);
-					Log.e("net.zhaopao.app",filename);
+//					Log.e("net.zhaopao.app",filename);
 //					System.out.print("filename="+filename);
 					getImage(imgname, filename);
 
