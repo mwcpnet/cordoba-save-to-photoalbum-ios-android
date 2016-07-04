@@ -344,7 +344,8 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 			out.flush();
 			out.close();
 
-			retVal = imageFile;
+			retVal = folder+"/"+fileName;
+//			retVal = imageFile;
 
 		} catch (Exception e) {
 			Log.e("SaveToPhotoAlbum", "An exception occured while saving image: " + e.toString());
