@@ -55,8 +55,8 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 	@Override
 	public boolean execute(String action, final JSONArray args, CallbackContext callbackContext) throws JSONException {
 		cordova.getThreadPool().execute(new Runnable() {
-			Toast.makeText(cordova.getActivity().this, "默认Toast样式",
-				     Toast.LENGTH_LONG).show();
+//			Toast.makeText(getApplicationContext(), "默认Toast样式",
+//				     Toast.LENGTH_SHORT).show();
 			public void run() {
 				try {
 					final String imgname = args.getString(0);
