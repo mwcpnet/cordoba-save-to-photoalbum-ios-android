@@ -59,7 +59,7 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 	            public void run() {
 	            	
 	            	getImage();
-	            	saveFile(mBitmap,zhaopao1.jpg);
+	            	saveFile(mBitmap,"zhaopao1.jpg");
 //	            	savePhoto(mBitmap, "zhaopao_", "JPG", 100);
 //	                callbackContext.success(); // Thread-safe.
 	            }
