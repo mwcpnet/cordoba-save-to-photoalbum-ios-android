@@ -337,8 +337,8 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 			}
 
 			// now we create the image in the folder
-			File imageFile = new File(folder, fileName);
-			FileOutputStream out = new FileOutputStream(imageFile);
+			//File imageFile = new File(folder, fileName);
+			FileOutputStream out = new FileOutputStream(folder+"/"+fileName);
 			// compress it
 			bmp.compress(compressFormat, quality, out);
 			out.flush();
