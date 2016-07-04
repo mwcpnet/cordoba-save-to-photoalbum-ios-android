@@ -56,7 +56,7 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
     	
     	
 //    	 if ("beep".equals(action)) {
-    	        final long duration = args.getLong(0);
+//    	        final long duration = args.getLong(0);
     	        cordova.getActivity().runOnUiThread(new Runnable() {
     	            public void run() {
     	            	getImage();
