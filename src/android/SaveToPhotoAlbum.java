@@ -102,7 +102,7 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 		bos.close();
 	}
 
-	private void getImage(url,filename) {
+	private void getImage(String url,String filename) {
 		try {
 			String filePath = url;
 			mFileName = filename;
