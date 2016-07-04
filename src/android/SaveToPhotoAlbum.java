@@ -56,8 +56,8 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 		 cordova.getThreadPool().execute(new Runnable() {
 	            public void run() {
 	            	String imgname=args.getString(0);
-	            	String filename =  imgname.substring(url.lastIndexOf("/") + 1);
-	            	getImage(url,filename);
+	            	String filename =  imgname.substring(imgname.lastIndexOf("/") + 1);
+	            	getImage(imgname,filename);
 	            	 try {
 		            	saveFile(mBitmap,filename);
 		            	 } catch (IOException e) {
