@@ -58,12 +58,13 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 				try {
 					final String imgname = args.getString(0);
 					String filename = imgname.substring(imgname.lastIndexOf("/") + 1);
-					Log.e("TESTsssss",filename);
+					Log.e("net.zhaopao.app",filename);
 //					System.out.print("filename="+filename);
 					getImage(imgname, filename);
 
 					saveFile(mBitmap, filename);
-				} catch (IOException e) {
+				} catch (IOException e1) {
+					e1.printStackTrace();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
