@@ -291,7 +291,7 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 	 * Private method to save a {@link Bitmap} into the photo library/temp
 	 * folder with a format, a prefix and with the given quality.
 	 */
-	private File savePhoto(Bitmap bmp, String prefix, String format, int quality) {
+	private String savePhoto(Bitmap bmp, String prefix, String format, int quality) {
 		File retVal = null;
 
 		try {
