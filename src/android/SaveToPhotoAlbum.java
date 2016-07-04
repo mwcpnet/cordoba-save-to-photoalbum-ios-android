@@ -55,17 +55,24 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 
 	@Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-    	
+		 cordova.getThreadPool().execute(new Runnable() {
+	            public void run() {
+	            	
+	            	getImage();
+	            	savePhoto(mBitmap, "zhaopao_", "JPG", 100);
+//	                callbackContext.success(); // Thread-safe.
+	            }
+	        });
     	
 //    	 if ("beep".equals(action)) {
 //    	        final long duration = args.getLong(0);
-    	        cordova.getActivity().runOnUiThread(new Runnable() {
-    	            public void run() {
-    	            	getImage();
-    	            	savePhoto(mBitmap, "zhaopao_", "JPG", 100);
-//    	                callbackContext.success(); // Thread-safe.
-    	            }
-    	        });
+//    	        cordova.getActivity().runOnUiThread(new Runnable() {
+//    	            public void run() {
+//    	            	getImage();
+//    	            	savePhoto(mBitmap, "zhaopao_", "JPG", 100);
+////    	                callbackContext.success(); // Thread-safe.
+//    	            }
+//    	        });
     	        return true;
 //    	    }
 //    	    return false;
