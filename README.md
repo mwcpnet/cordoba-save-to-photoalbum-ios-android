@@ -1,6 +1,6 @@
 # cordova-save-to-photoalbum
 
-iOS only. Save image file(gif, jpg, png) to photo album. Tested in iPhone4(iOS 7) and Simulator(iOS 9.0).
+iOS & android. Save image file(gif, jpg, png) to photo album.
 
 ```js
 document.addEventListener("deviceready", function(){
