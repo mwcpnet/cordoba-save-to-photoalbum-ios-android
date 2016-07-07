@@ -18,7 +18,7 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yuanwowo/cordova-save-to-photoalbum.git"
+    "url": "git+https://github.com/RainyTest/cordoba-save-to-photoalbum-ios-android.git"
   },
   "keywords": [
     "ecosystem:cordova",
@@ -35,7 +35,7 @@
   "author": "Yuan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yuanwowo/cordova-save-to-photoalbum/issues"
+    "url": "https://github.com/RainyTest/cordova-save-to-photoalbum-ios-android/issues"
   },
-  "homepage": "https://github.com/yuanwowo/cordova-save-to-photoalbum#readme"
+  "homepage": "https://github.com/RainyTest/cordova-save-to-photoalbum-ios-android#readme"
 }
