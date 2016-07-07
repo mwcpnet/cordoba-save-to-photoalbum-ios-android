@@ -1,4 +1,4 @@
-# cordova-save-to-photoalbum
+# cordova-save-to-photoalbum-ios-android
 
 iOS & android. Save image file(gif, jpg, png) to photo album.
 
