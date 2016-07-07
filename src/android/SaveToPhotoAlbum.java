@@ -1,4 +1,4 @@
-package com.nimingban.cordova.savetophotoalbum;
+package net.zhaopao.cordova.savetophotoalbum;
 
 import java.io.BufferedOutputStream;
 import java.io.IOException;

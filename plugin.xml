@@ -10,9 +10,9 @@
 
     <name>SaveToPhotoAlbum</name>
 
-    <description>iOS only. Save image file(gif, jpg, png) to photo album.</description>
+    <description>iOS & android Save image file(gif, jpg, png) to photo album.</description>
 
-    <author>Yuan</author>
+    <author>Rainy</author>
 
     <keywords>gif,image base64 data,photo album,photos gallery</keywords>
 
@@ -36,7 +36,7 @@
     
      <!-- android -->
   <platform name="android">
-    <source-file src="src/android/SaveToPhotoAlbum.java" target-dir="src/com/nimingban/cordova/savetophotoalbum"/>
+    <source-file src="src/android/SaveToPhotoAlbum.java" target-dir="src/net/zhaopao/cordova/savetophotoalbum"/>
 
     <config-file parent="/*" target="AndroidManifest.xml">
       <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -63,7 +63,7 @@
 
     <config-file parent="/*" target="res/xml/config.xml">
       <feature name="SaveToPhotoAlbum">
-        <param name="android-package" value="com.nimingban.cordova.savetophotoalbum.SaveToPhotoAlbum"/>
+        <param name="android-package" value="net.zhaopao.cordova.savetophotoalbum.SaveToPhotoAlbum"/>
       </feature>
     </config-file>
   </platform>

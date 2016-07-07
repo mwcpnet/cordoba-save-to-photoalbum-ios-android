@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "iOS & android. Save image file(gif, jpg, png) to photo album.",
   "cordova": {
-    "id": "com.nimingban.cordova.savetophotoalbum",
+    "id": "net.zhaopao.cordova.savetophotoalbum",
     "platforms": [
       "ios",
       "android"
