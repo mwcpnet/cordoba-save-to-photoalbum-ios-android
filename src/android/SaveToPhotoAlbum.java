@@ -94,7 +94,7 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 					
 					callbackContext.success();
 				} catch (OutOfMemoryError e) {
-					　　//
+					　　
 				}
 //				} catch (IOException e1) {
 //					e1.printStackTrace();
