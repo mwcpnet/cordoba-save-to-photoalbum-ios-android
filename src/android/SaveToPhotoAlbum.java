@@ -64,8 +64,10 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 //					Log.e("net.zhaopao.app",filename);
 //					System.out.print("filename="+filename);
 					getImage(imgname, filename);
+					
+					MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, filename, filename);
 
-					saveFile(mBitmap, filename);
+//					saveFile(mBitmap, filename);
 					
 					callbackContext.success();
 				} catch (IOException e1) {
