@@ -69,7 +69,7 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 					String url = MediaStore.Images.Media.insertImage(cordova.getActivity().getContentResolver(), mBitmap, filename, filename);
 					if(!mBitmap.isRecycled() ){ 
 						mBitmap.recycle();   //回收图片所占的内存 
-				         system.gc();  //提醒系统及时回收 
+				         System.gc();  //提醒系统及时回收 
 					} 
 //					if(url != null){
 //						Uri u = Uri.parse(url);   
