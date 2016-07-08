@@ -73,6 +73,7 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 				              android.widget.Toast.LENGTH_LONG // actually controlled by a timer further down
 				          );
 
+					
 //					saveFile(mBitmap, filename);
 					
 					callbackContext.success();
