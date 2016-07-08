@@ -65,7 +65,7 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 //					System.out.print("filename="+filename);
 					getImage(imgname, filename);
 					
-					MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, filename, filename);
+					MediaStore.Images.Media.insertImage(cordova.getActivity().getContentResolver(), mBitmap, filename, filename);
 
 //					saveFile(mBitmap, filename);
 					
