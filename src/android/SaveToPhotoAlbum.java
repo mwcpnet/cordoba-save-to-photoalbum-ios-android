@@ -69,7 +69,6 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 					String url = MediaStore.Images.Media.insertImage(cordova.getActivity().getContentResolver(), mBitmap, filename, filename);
 					if(url != null){
 						Uri u = Uri.parse(url);   
-						mMediaPlayer.setDataSource(Context,u);  
 						Bitmap bitmap = MediaStore.Images.Media.getBitmap(cordova.getActivity().getContentResolver(), u);
 						 if(bitmap == null){
 							 saveFile(mBitmap, filename);
