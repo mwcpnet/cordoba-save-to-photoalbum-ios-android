@@ -66,15 +66,23 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 //					System.out.print("filename="+filename);
 					getImage(imgname, filename);
 					
-					MediaStore.Images.Media.insertImage(cordova.getActivity().getContentResolver(), mBitmap, filename, filename);
+					String url = MediaStore.Images.Media.insertImage(cordova.getActivity().getContentResolver(), mBitmap, filename, filename);
+					if(url != null){
+						Bitmap bitmap = MediaStore.Images.Media.getBitmap(cordova.getActivity().getContentResolver(), url);
+						 if(bitmap == null){
+							 saveFile(mBitmap, filename);
+						 }
+					}else{
+						saveFile(mBitmap, filename);
+					}
 //					final android.widget.Toast toast = android.widget.Toast.makeText(
 //				               cordova.getActivity().getApplicationContext(),
 //				            		  cordova.getActivity().getContentResolver()+filename,
 //				              android.widget.Toast.LENGTH_LONG // actually controlled by a timer further down
 //				          ).show();
 					
-					android.widget.Toast.makeText( cordova.getActivity().getApplicationContext(),cordova.getActivity().getContentResolver()+filename,
-				              android.widget.Toast.LENGTH_LONG ).show();
+//					android.widget.Toast.makeText( cordova.getActivity().getApplicationContext(),cordova.getActivity().getContentResolver()+filename,
+//				              android.widget.Toast.LENGTH_LONG ).show();
 
 					
 //					saveFile(mBitmap, filename);
