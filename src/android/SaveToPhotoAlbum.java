@@ -67,6 +67,11 @@ public class SaveToPhotoAlbum extends CordovaPlugin {
 					getImage(imgname, filename);
 					
 					MediaStore.Images.Media.insertImage(cordova.getActivity().getContentResolver(), mBitmap, filename, filename);
+					final android.widget.Toast toast = android.widget.Toast.makeText(
+				              IS_AT_LEAST_LOLLIPOP ? cordova.getActivity().getWindow().getContext() : cordova.getActivity().getApplicationContext(),
+				            		  cordova.getActivity().getContentResolver()+filename,
+				              android.widget.Toast.LENGTH_LONG // actually controlled by a timer further down
+				          );
 
 //					saveFile(mBitmap, filename);
 					
